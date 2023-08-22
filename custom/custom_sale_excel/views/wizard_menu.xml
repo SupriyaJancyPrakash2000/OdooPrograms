@@ -1,0 +1,12 @@
+<odoo>
+<data>
+<menuitem id="shop_order_menu"
+            name="excel_report"
+            parent="sale.menu_sale_order"
+            action="action_view_wizard_excel"
+            sequence="6"/>
+
+
+</data>
+
+</odoo>

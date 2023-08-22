@@ -1,0 +1,97 @@
+<!-- <odoo>
+<data>
+
+
+<!-- form view -->
+<record id="sale_shop_form" model="ir.ui.view">
+    <field name="name">sale.order.form..new1</field>
+    <field name="model">custom.sales.order</field>
+    <field name="arch" type="xml">
+    <form string="Shop Form">
+    <sheet>
+    <group>
+        <group>
+            <field name="shop_name"/>
+            <field name="place"/>
+        </group>
+        <group>
+            <field name="amount"/>
+            <field name="count"/>
+        </group>
+    </group>
+
+<!-- lines-->
+    <notebook>
+        <page string="Sales shop">
+            <field name="sales_shop_line">
+                <tree editable="bottom">
+                    <field name="month"/>
+                    <field name="amount"/>
+                </tree>
+            </field>
+        </page>
+    </notebook>
+    </sheet>
+    </form>   
+</field>
+</record>
+
+
+<!-- list view -->
+<record id="sale_shop_tree" model="ir.ui.view">
+    <field name="name">sale.order.tree.new2</field>
+    <field name="model">custom.sales.order</field>
+    <field name="arch" type="xml">
+    <tree>
+        <field name="shop_name"/>
+        <field name="place"/>
+        <field name="amount"/>
+    </tree>
+    </field>
+</record>
+
+<!-- kanban view -->
+<record id="sale_shop_kanban" model="ir.ui.view">
+    <field name="name">sale.shop.kanban.view</field>
+    <field name="model">custom.sales.order</field>
+    <field name="arch" type="xml">
+    <kanban>
+        <field name="shop_name"/>
+        <field name="place"/>
+        <field name="amount"/>
+            <templates>
+                <t t-name="kanban-box">
+                <div t-attf-class="oe_kanban_global_click">
+                    <div class="oe_kanban_card">
+                    <span t-esc="record.shop_name.raw_value"/></div>
+                    <div class="oe_kanban_card">
+                    <span t-esc="record.amount.raw_value"/></div>
+                        <!-- <ul>
+                            <li><field name="shop_name"/></li>
+                            <li><field name="place"/></li>
+                            <li><field name="amount"/></li>
+                        </ul> -->
+                    </div>
+                </t>
+            </templates>
+    </kanban>
+    </field>
+</record>
+
+<record id="custom_shop_action" model="ir.actions.act_window">
+            <field name="name">shop</field>
+            <field name="res_model">custom.sales.order</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+
+
+<menuitem id="shop_order_menu2"
+            name="ShopOrder"
+            parent="sale.sale_order_menu"
+            action="custom_shop_action"
+            sequence="6"/>
+
+
+</data>
+
+</odoo> -->

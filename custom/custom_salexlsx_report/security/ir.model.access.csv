@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sale_xlsx_wizard_user,custom_salexlsx_report.sale_xlsx_wizard,model_sale_xlsx_wizard,base.group_user,1,1,1,1

@@ -1,0 +1,9 @@
+<odoo>
+<data>
+    <menuitem id="vendor_wizard_menu"
+                name="vendor_xlsx"
+                parent="account.menu_action_move_out_invoice_type"
+                action="action_view_wizard_excel_id"
+                sequence="5"/>
+</data>
+</odoo>

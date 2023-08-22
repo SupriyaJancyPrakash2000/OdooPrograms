@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sales_shop,Shop_entry.shop,model_sales_shop,base.group_user,1,1,1,1
+access_sales_shop_line,Shop_entry.shop,model_sales_shop_line,base.group_user,1,1,1,1
+access_sales_shop_wizard_user,Shop_entry.sales_shop_wizard,model_sales_shop_wizard,base.group_user,1,1,1,1

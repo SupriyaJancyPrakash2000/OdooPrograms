@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_move_form1" model="ir.ui.view">
+            <field name="name">account.move.form</field>
+            <field name="model">loan.sanction</field>
+            <field name="arch" type="xml">
+                <form string="Loan">
+                <header>
+                    <button name="loan_sanction" string="Check Installment" type="object" class="oe_highlight"/>
+                    <button name="loan_approval" string="Approve" type="object" class="oe_highlight" attrs="{'invisible':[('state', '=', 'approve')]}"/>
+                    <button name="state_back" string="Back" type="object" class="oe_highlight" attrs="{'invisible':[('state', '=', 'draft')]}"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,approve"/>
+                </header>
+                    <sheet>
+                        <group>
+
+                            <field name="emp_id"/>
+                            <field name="instal"/>
+                            <field name="date"/>
+                            <field name="check" invisible="1"/>
+                            <field name="installment" attrs="{'invisible':[('check', '=', False)]}"/>
+
+                        </group>
+                         <notebook>
+                        <page string="Loan lines">
+                            <field name="loan_lines">
+                                <tree editable="bottom">
+                                    <field name="date"/>
+                                    <field name="amount"/>
+                                    <field name="paid"/>
+                                </tree>
+                            </field>
+                        </page>
+                      </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_loan_sanction_tree" model="ir.ui.view">
+            <field name="name">loan.allocated.new</field>
+            <field name="model">loan.sanction</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="emp_id"/>
+                    <field name="instal" force_save="1"/>
+                    <field name="date"/>
+                    <field name="check" invisible="1"/>
+                    <field name="installment" attrs="{'invisible':[('check', '=', False)]}"/>
+                </tree>
+            </field>
+        </record>
+          
+    
+        <record id="action_create_new1" model="ir.actions.act_window">
+            <field name="name">Loan allocated</field>
+            <field name="res_model">loan.sanction</field>
+            <field name="view_mode">form,tree</field>
+        </record>
+        
+        <menuitem id="menu_second"
+        name="Loan Allocation"c
+        parent="custom_accounting.menu_acounting_loan"
+        action="action_create_new1"/>
+
+    </data>
+</odoo>

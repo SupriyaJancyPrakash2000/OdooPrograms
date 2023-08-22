@@ -1,0 +1,9 @@
+<odoo>
+<data>
+    <menuitem id="vendor_wizard_menu1"
+                name="xlsx"
+                parent="purchase.menu_purchase_form_action"
+                action="action_view_wizard_excel_id_new"
+                sequence="5"/>
+</data>
+</odoo>

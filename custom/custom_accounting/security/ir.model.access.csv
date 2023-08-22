@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_employee_loan,custom_accounting.employee_loan,model_employee_loan,base.group_user,1,1,1,1
+access_loan_sanction,custom_accounting.loan_sanctional,model_loan_sanction,base.group_user,1,1,1,1
+access_loan_sanctionlines_user,custom_accounting.loan.sanctionlines,model_loan_sanctionlines,base.group_user,1,1,1,1

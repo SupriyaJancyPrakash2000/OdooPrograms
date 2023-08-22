@@ -1,0 +1,10 @@
+<odoo>
+    <record id="report_invoicing_xlsx_id" model="ir.actions.report">
+        <field name="name">Vendor Excel Report</field>
+        <field name="model">purchase.wizard.xlsx</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">purchase_xlsx_report.excel_take</field>
+        <field name="report_file">purchase_xlsx_report.excel_take</field>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

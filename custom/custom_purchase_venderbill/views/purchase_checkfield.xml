@@ -1,0 +1,14 @@
+<odoo>
+<data>
+<record id="puchase_inherited_form_product_select" model="ir.ui.view">
+    <field name="name">bill.product.check</field>
+    <field name="model">purchase.order</field>
+    <field name="inherit_id" ref="purchase.purchase_order_form"/>
+    <field name="arch" type="xml">
+        <xpath expr="/form/sheet/notebook/page/field[@name='order_line']/tree/field[@name='price_unit']" position="after">
+            <field name="select"/>
+        </xpath>
+    </field>
+</record>
+</data>
+</odoo>

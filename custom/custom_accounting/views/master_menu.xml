@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_accounting_loan" 
+        name="Loan" 
+        parent="account.menu_finance"/>
+    </data>
+</odoo>

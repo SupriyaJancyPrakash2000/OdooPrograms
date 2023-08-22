@@ -1,0 +1,14 @@
+<odoo>
+<data>
+<record id="invoice_inherited_form_product_select" model="ir.ui.view">
+    <field name="name">invoice.product.check</field>
+    <field name="model">account.move</field>
+    <field name="inherit_id" ref="account.view_move_form"/>
+    <field name="arch" type="xml">
+        <xpath expr="/form/sheet/notebook/page/field[@name='invoice_line_ids']/tree/field[@name='quantity']" position="after">
+            <field name="select"/>
+        </xpath>
+    </field>
+</record>
+</data>
+</odoo>

@@ -1,0 +1,17 @@
+<odoo>
+<data>
+<record id="sale_order_inherited_form_auto_delivery" model="ir.ui.view">
+    <field name="name">sale.auto.delivery</field>
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_form"/>
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='partner_id']" position="before">
+            <field name="auto_delivery"/>
+        </xpath>
+        <xpath expr="//button[@name='action_cancel']" position="after">
+            <button name="validate_delivery" string="Validate" class="oe_highlight" type="object"/>
+        </xpath>
+    </field>
+</record>
+</data>
+</odoo>

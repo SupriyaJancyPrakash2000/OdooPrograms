@@ -1,0 +1,14 @@
+<odoo>
+<data>
+<record id="product_inherited_form_discount_display" model="ir.ui.view">
+    <field name="name">product.inherit.discount</field>
+    <field name="model">product.product</field>
+    <field name="inherit_id" ref="product.product_normal_form_view"/>
+    <field name="arch" type="xml">
+        <xpath expr="//notebook" position="before">
+            <field name="check_discount" string="Discount True"/>
+        </xpath>
+    </field>
+</record>
+</data> 
+</odoo>

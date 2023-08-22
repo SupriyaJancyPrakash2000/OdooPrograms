@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_order123" model="ir.actions.report">
+                <field name="name">sale Order</field>
+                <field name="model">sale.order</field>
+                <field name="report_type">qweb-pdf</field>
+                <field name="report_name">custom_quotation_report.report_quotation</field>
+                <field name="report_file">custom_quotation_report.report_quotation</field>
+                <field name="binding_model_id" ref="sale.model_sale_order"/>
+                <field name="binding_type">report</field>
+                <field name="paperformat_id" ref="custom_quotation_report.report_paperformat_id1"/>
+    </record>
+
+    <template id="report_quotation">
+        <t t-foreach="docs" t-as="property">
+            <t t-call="web.html_container">
+                <t t-call="custom_quotation_report.quotation_custom_report_header_footer">
+                    <div class="page">
+                            <h2 style="text-align:center; font-weight:bold;">QUOTATION</h2>
+                            <table width="100%" style="font-size: 15px; border: 1px solid black;">
+                                <tr style="font-size: 15px; border: 1px solid black; width:100%">
+                                    <td width="31%" style="border:1px solid black;text-align:left">Date :</td>
+                                    <td width="35%"><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/></td>
+                                    <td width="34%" style="border: 1px solid black;"></td>
+                                </tr>
+                               <tr style="font-size: 15px; border: 1px solid black; width:100%">
+                                    <td width="31%" style="border:1px solid black;text-align:left">Quote No :</td>
+                                    <td width="35%" style="border:1px solid black;text-align:left">IMPSEAALSI0012023AHO0038</td>
+                                    <td width="34%" style="border: 1px solid black;"></td>
+                                </tr>
+                                <tr style="font-size: 15px; border: 1px solid black; width:100%">
+                                    <td width="31%" style="border:1px solid black;text-align:left">Kind Attention :</td>
+                                    <td width="35%" style="border:1px solid black;text-align:left">test</td>
+                                    <td width="34%" style="border: 1px solid black;"></td>
+                                </tr>
+                            </table>
+                            <div style="margin-bottom:20px;"></div>
+                            <table width="100%" style="font-size: 15px; border: 1px solid black;">
+                                <tr style="font-size: 15px; border: 1px solid black; width:100%">
+                                    <td width="31%" style="border:1px solid black;text-align:left">Customer name :</td>
+                                    <td width="35%" style="border: 1px solid black;">test-Agility</td>
+                                    <td width="14%" style="border: 1px solid black;">Quote Date :</td>
+                                    <td width="20%" style="border: 1px solid black;">13/05/2023</td>
+                                </tr>
+                               <tr style="font-size: 15px; border: 1px solid black; width:100%">
+                                    <td width="31%" style="border:1px solid black;text-align:left">Address :</td>
+                                    <td width="35%" style="border: 1px solid black;">, Oman</td>
+                                    <td width="14%" style="border: 1px solid black;"></td>
+                                    <td width="20%" style="border: 1px solid black;"></td>
+                                </tr>
+                                <tr style="font-size: 15px; border: 1px solid black; width:100%">
+                                    <td width="31%" style="border:1px solid black;text-align:left">Customer reference :</td>
+                                    <td width="35%" style="border: 1px solid black;">test</td>
+                                    <td width="14%" style="border: 1px solid black;"></td>
+                                    <td width="20%" style="border: 1px solid black;"></td>
+                                </tr>
+                            </table>
+                            <div style="margin-bottom:20px;"></div>
+                            <table width="100%" style="font-size: 15px; border: 1px solid black;">
+                                <tr style="font-size: 15px; border: 1px solid black; width:100%">
+                                    <td width="35%" style="text-align:left">Job Type:</td>
+                                    <td width="65%" style="text-align:left">Customs clearance</td>
+                                </tr>
+                                <tr style="font-size: 15px; border: 1px solid black; width:100%">
+                                    <td width="35%" style="text-align:left">Quote Type:</td>
+                                    <td width="65%" style="text-align:left">Shipment</td>
+                                </tr>
+                                <tr style="font-size: 15px; border: 1px solid black; width:100%">
+                                    <td width="35%" style="text-align:left">Mode:</td>
+                                    <td width="65%" style="text-align:left">Sea FCL</td>
+                                </tr>
+                                <tr style="font-size: 15px; border: 1px solid black; width:100%">
+                                    <td width="35%" style="text-align:left">Transaction:</td>
+                                    <td width="65%" style="text-align:left">Import</td>
+                                </tr>
+                                <tr style="font-size: 15px; border: 1px solid black; width:100%">
+                                    <td width="35%" style="text-align:left">Scope:</td>
+                                    <td width="65%" style="text-align:left">test</td>
+                                </tr>
+                                <tr style="font-size: 15px; border: 1px solid black; width:100%">
+                                    <td width="35%" style="text-align:left">Commodity:</td>
+                                    <td width="65%" style="text-align:left">test</td>
+                                </tr>
+                                <tr style="font-size: 15px; border: 1px solid black; width:100%">
+                                    <td width="35%" style="text-align:left">Equipment:</td>
+                                    <td width="65%" style="text-align:left">test</td>
+                                </tr>
+                                <tr style="font-size: 15px; border: 1px solid black; width:100%">
+                                    <td width="35%" style="text-align:left">Volume:</td>
+                                    <td width="65%" style="text-align:left"></td>
+                                </tr>
+                                <tr style="font-size: 15px; border: 1px solid black; width:100%">
+                                    <td width="35%" style="text-align:left">Gross Weight:</td>
+                                    <td width="65%" style="text-align:left">123.0</td>
+                                </tr>
+                                <tr style="font-size: 15px; border: 1px solid black; width:100%">
+                                    <td width="35%" style="text-align:left">Rate Validity:</td>
+                                    <td width="65%" style="text-align:left">test</td>
+                                </tr>
+                                <tr style="font-size: 15px; border: 1px solid black; width:100%">
+                                    <td width="35%" style="text-align:left">Delivery:</td>
+                                    <td width="65%" style="text-align:left">test del</td>
+                                </tr>
+                                <tr style="font-size: 15px; border: 1px solid black; width:100%">
+                                    <td width="35%" style="text-align:left">POD:</td>
+                                    <td width="65%" style="text-align:left">test pod</td>
+                                </tr>
+                            </table>
+                            <div style="margin-bottom:20px;"></div>
+                        <table width="100%" style="font-size: 15px; border: 1px solid black;">
+                            <tr style="font-size: 15px; border: 1px solid black; width:100%">
+                            <td width="13%" style="border:1px solid black; text-align:center">Sl No.</td>
+                            <td width="22%" style="border:1px solid black; text-align:center">Description</td>
+                            <td width="13%" style="border:1px solid black; text-align:center">Unit Price</td>
+                            <td width="13%" style="border:1px solid black; text-align:center">Basis</td>
+                            <td width="13%" style="border:1px solid black; text-align:center">Quantity</td>
+                            <td width="13%" style="border:1px solid black; text-align:center">Subtotal</td>
+                            <td width="13%" style="border:1px solid black; text-align:center">Remarks</td>
+                            </tr>
+                            <tr>
+                                <td colspan="7">Destination Charges</td>
+                            </tr>
+                            <tr style="font-size: 15px; border: 1px solid black; width:100%;" t-foreach="property.order_line" t-as="a">
+                               <td width="13%" style="border:1px solid black; text-align:center"><span t-field="a.product_id"/></td>
+                                <td width="22%" style="border:1px solid black; text-align:center"><span t-field="a.name"/></td>
+                                <td width="13%" style="border:1px solid black; text-align:center"><span t-field="a.price_unit"/></td>
+                                <td width="13%" style="border:1px solid black; text-align:center"><span t-field="a.state"/></td>
+                                <td width="13%" style="border:1px solid black; text-align:center"><span t-field="a.product_uom_qty"/></td>
+                                <td width="13%" style="border:1px solid black; text-align:center"><span t-field="a.price_subtotal"/></td>
+                                <td width="13%" style="border:1px solid black; text-align:center">test</td> 
+                            </tr>
+                        </table>
+                        <div style="margin-bottom:20px;"></div>
+                        <table width="100%" style="font-size:15px" height="150px">
+                            <tr width="100%" style="font-size:15px;">
+                                <td width="25%"></td>
+                                <td width="25%"></td>
+                                <td width="16%"></td>
+                                <td width="34%"></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; float:left;" width="25%"></td>
+                                <td width="20%"></td>
+                                <td width="5%"></td>
+                                <td style="text-align:left; padding-left:100px" width="50%">Estimated Total:<span t-field="property.amount_total"/></td>
+                            </tr><br/>
+                            <tr colspan="4">
+                                <td width="35%">Notes to Customer : test notes</td>
+                            </tr></table><br/><br/>
+                            <table width="100%" style="font-size:15px" height="150px">
+                            <tr width="100%" style="font-size:15px;">
+                                <td width="25%"></td>
+                                <td width="25%"></td>
+                                <td width="16%"></td>
+                                <td width="34%"></td>
+                            </tr>
+                            <tr>
+                                <td width="25%">Terms and Condition</td>
+                                <td width="25%"></td>
+                                <td width="16%"></td>
+                                <td width="34%"></td>
+                            </tr>
+                            <tr>
+                                <td width="25%"></td>
+                                <td width="25%"></td>
+                                <td width="16%"></td>
+                                <td width="34%"></td>
+                            </tr>
+                        </table><br/><br/><br/><br/>
+                        <!-- <table width="100%" style="font-size:15px" height="150px">
+                            <tr width="100%" style="font-size:15px;">
+                                <td width="25%"></td>
+                                <td width="25%"></td>
+                                <td width="16%"></td>
+                                <td width="34%"></td>
+                            </tr> -->
+                            
+                        
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="custom_sale_report_wizard_view" model="ir.ui.view">
+        <field name="name">custom.sale.report.wizard.view</field>
+        <field name="model">custom.sale.report</field>
+        <field name="arch" type="xml">
+            <form string="Sale Report">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="date_from" required="1"/>
+                            <field name="company_ids" widget="many2many_tags" required="1"/>
+                        </group>
+                        <group>
+                            <field name="date_to" required="1"/>
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="Generate Excel" name="generate_report" type="object" class="oe_highlight"/>
+                    <button string="Cancel" special="cancel" class="oe_link"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="custom_sale_report_action" model="ir.actions.act_window">
+        <field name="name">Sale Report</field>
+        <field name="res_model">custom.sale.report</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="custom_sale_report_menu" action="custom_sale_report_action" name="Sale Report" parent="sale.menu_sale_report" sequence="209"/>
+
+</odoo>

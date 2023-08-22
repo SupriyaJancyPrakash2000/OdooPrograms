@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_product_move_service_user,bi_inventory_op.product.move_service,model_product_move_service,base.group_user,1,1,1,1
+access_product_stockline_user,bi_inventory_op.product.stockline,model_product_stockline,base.group_user,1,1,1,1

@@ -1,0 +1,32 @@
+<odoo>
+<data>
+    <record id="wizard_excel_vendor_id" model="ir.ui.view">
+        <field name="name">vendor.excelreport.wizard.new</field>
+        <field name="model">vendor.xlsx.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Wizard Form">
+                
+                    <group>
+                        <field name="date_from" />
+                        <field name="date_to" />
+                    </group>
+               
+                <footer>
+                    <button name="create_xlsx" string="xlsx report" class="oe_highlight" type="object"/>
+                </footer> 
+            </form>
+        </field>
+    </record>
+        
+
+    <record id="action_view_wizard_excel_id" model="ir.actions.act_window">
+        <field name="name">view.wizard.newxlsx</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">vendor.xlsx.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wizard_excel_vendor_id"/>
+        <field name="target">new</field>
+    </record>
+
+</data>
+</odoo>

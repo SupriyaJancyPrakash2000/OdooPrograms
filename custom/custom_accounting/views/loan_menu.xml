@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_move_form" model="ir.ui.view">
+            <field name="name">account.move.form</field>
+            <field name="model">employee.loan</field>
+            <field name="arch" type="xml">
+                <form string="Loan">
+                <header>
+                    <button name="Loan_action" string="Approve" type="object" class="oe_highlight"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,post"/>
+                </header>
+                    <sheet>
+                        <group>
+
+                            <field name="emp_id"/>
+                            <field name="amt"/>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_loan_sanction_tree1" model="ir.ui.view">
+            <field name="name">Loan.menu.new</field>
+            <field name="model">employee.loan</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="emp_id"/>
+                    <field name="amt"/>
+                </tree>
+            </field>
+        </record>
+          
+    
+        <record id="action_create_new" model="ir.actions.act_window">
+            <field name="name">Loan</field>
+            <field name="res_model">employee.loan</field>
+            <field name="view_mode">form,tree</field>
+        </record>
+
+        <menuitem id="menu_first"
+        name="Loan Approve"
+        parent="custom_accounting.menu_accounting_loan"
+        action="action_create_new"/>
+
+    </data>
+</odoo>

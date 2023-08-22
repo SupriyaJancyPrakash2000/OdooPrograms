@@ -1,0 +1,33 @@
+<odoo>
+<data>
+    <record id="wizard_reason_id_new" model="ir.ui.view">
+        <field name="name">purchase.wizard</field>
+        <field name="model">wizard.view.reason</field>
+        <field name="arch" type="xml">
+            <form string="Wizard Form new">
+                
+                    <group>
+                        <field name="reason" />
+                        <field name="purchase_id" invisible="1"/>
+                        <field name="sale_id"/>
+                    </group>
+               
+                <footer>
+                        <button name="pass_review" string="Add" type="object"  class="btn-primary"/>
+                </footer> 
+            </form>
+        </field>
+    </record>
+        
+
+    <record id="reason_pass_wizard_excel_id_new" model="ir.actions.act_window">
+        <field name="name">view.wizard.newxlsx</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wizard.view.reason</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wizard_reason_id_new"/>
+        <field name="target">new</field>
+    </record>
+
+</data>
+</odoo>

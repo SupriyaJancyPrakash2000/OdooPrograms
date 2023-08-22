@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_material_transfer_user,bi_material_transfer.material.transfer,model_material_transfer,base.group_user,1,1,1,1
+access_material_transferline_user,bi_material_transfer.material.transferline,model_material_transferline,base.group_user,1,1,1,1

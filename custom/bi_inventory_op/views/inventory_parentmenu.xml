@@ -1,0 +1,72 @@
+<odoo>
+    <data>
+        <record id="product_movement_service" model="ir.ui.view">
+            <field name="name">product service</field>
+            <field name="model">product.move_service</field>
+            <field name="arch" type="xml">
+                <form string="Product Form">
+                    <header>
+                        <button name="product_move" string="product move" class="oe_highlight" type="object"/>
+                        <button name="product_return" string="product return" class="oe_highlight" type="object"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,move,return"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" name="product_picking"  type="object" icon="fa-truck" >
+                            <field string="Product Picking"  name="trans_count" widget="statinfo"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name='from_loc'/>
+                                <field name='to_loc'/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string='Product service Line'>
+                                <field name="stock_line_ids">
+                                    <tree editable="bottom">
+                                        <field name="product_id"/>
+                                        <field name="quantity"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="product_movement_service_tree" model="ir.ui.view">
+            <field name="name">product service line</field>
+            <field name="model">product.move_service</field>
+            <field name="arch" type="xml">
+                <tree string="Provision Entry List">
+                    <field name="from_loc"/>
+                    <field name="to_loc"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="product_movement_service_action" model="ir.actions.act_window">
+            <field name="name">action Entry</field>
+            <field name="res_model">product.move_service</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+            id="product_movement_service_menu"
+            name="product movement"
+            action="product_movement_service_action"
+            parent="stock.menu_stock_root"
+            sequence="31"
+        />
+         <menuitem
+            id="product_movement_service_sub_menu"
+            name="product movement service"
+            action="product_movement_service_action"
+            parent="product_movement_service_menu"
+            sequence="31"
+        />
+    </data>
+</odoo>

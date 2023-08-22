@@ -1,0 +1,36 @@
+<odoo>
+<data>
+<record id="wizard_sale_shop_form" model="ir.ui.view">
+    <field name="name">sales.shop.wizard.new1</field>
+    <field name="model">sales.shop.wizard</field>
+    <field name="arch" type="xml">
+    <form string="Wizard Form">
+        <sheet>
+            <group>
+                <field name="product_id" />
+                <field name="value" attrs="{'readonly': [('checklist', '=', True)]}" />
+                <field name="product_ids" widget="many2many_tags"/>
+                <field name="invoices_view_ids" widget="many2many_tags"/>
+                <field name="checklist"/>
+            </group>
+            <group>
+                <field name="sales_id" invisible="1"/>
+            </group>
+        </sheet> 
+            <footer>
+                    <button name="pass_value" string="Print" class="oe_highlight" type="object"/>
+                    <button name="delete_product" string="Delete" class="oe_highlight" type="object"/>
+                     <button name="invoice_pass" string="Invoice" class="oe_highlight" type="object"/>
+            </footer> 
+    </form>
+    </field>
+</record>
+<record id="action_view_wizard" model="ir.actions.act_window">
+    <field name="name">view.wizard.new1</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">sales.shop.wizard</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+</record>
+</data>
+</odoo>

@@ -1,0 +1,10 @@
+<odoo>
+    <record id="sale_report_excel_xlsx_id" model="ir.actions.report">
+        <field name="name">Sale Excel Report</field>
+        <field name="model">sale.xlsx.wizard</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">custom_salexlsx_report.sale_xlsx</field>
+        <field name="report_file">ccustom_salexlsx_report.sale_xlsx</field>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
