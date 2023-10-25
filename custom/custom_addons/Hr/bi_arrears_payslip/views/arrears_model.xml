@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+        <record id="arrear_model_tree" model="ir.ui.view">
+            <field name="name">arrears tree</field>
+            <field name="model">salary.arrears</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_id"/>
+                    <field name="arrear_amount" />
+                    <field name="effective_from_month" />
+
+                </tree>
+            </field>
+        </record>
+        <record id="arrears_view_form" model="ir.ui.view">
+            <field name="name">website.view.form</field>
+            <field name="model">salary.arrears</field>
+            <field name="arch" type="xml">
+                <form string="arrears">
+                    <header>
+                        <button name="allocate_arrears" string="Allocate" type="object" class="oe_highlight"/>
+                    </header>
+
+                    <sheet>
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="arrear_amount" />
+                            <field name="effective_from_month" />
+                            <field name="salary"/>
+                            <field name="arrears_boolean" />
+
+                        </group>
+                    </sheet>
+<!--                    <sheet>-->
+<!--                        <group>-->
+<!--                            <field name="year_wise"/>-->
+<!--                            <field name="yearly_salary"/>-->
+<!--                            <field name="tax"/>-->
+<!--                        </group>-->
+<!--                    </sheet>-->
+
+                </form>
+            </field>
+        </record>
+        <record id="arrears_action_view_form" model="ir.actions.act_window">
+            <field name="name">salary</field>
+            <field name="res_model">salary.arrears</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="arrears_menu_root" name="Arrears" sequence="7"/>
+        <menuitem id="employee_arrears_sub_menu" name="Employee Arrears" parent="bi_arrears_payslip.arrears_menu_root" action="arrears_action_view_form" sequence="0"/>
+
+    </data>
+</odoo>

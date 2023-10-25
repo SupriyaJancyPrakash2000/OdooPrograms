@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <record id="hr_recruit_employee_contract" model="ir.ui.view">
+            <field name="name">Employee Salary sheet</field>
+            <field name="model">hr.applicant</field>
+            <field name="inherit_id" ref="hr_recruitment.hr_applicant_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page name="salary sheet" string="Salary Sheet">
+                        <field name="emp_salary_sheet_ids">
+                            <tree editable="bottom">
+                                <field name="name"/>
+                                <field name="category"/>
+                                <field name="quant"/>
+                                <field name="rate"/>
+                                <field name="amount"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

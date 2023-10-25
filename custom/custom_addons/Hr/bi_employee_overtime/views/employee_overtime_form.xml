@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_payroll_form_new" model="ir.ui.view">
+            <field name="name">payroll form</field>
+            <field name="model">employee.payroll</field>
+            <field name="arch" type="xml">
+                <form string="Loan">
+                 <header>
+                    <button name="overtime_action" string="SHOW" type="object" class="oe_highlight"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,approve"/>
+                </header>
+                    <sheet>
+                            <group>
+
+                                <field name="emp_id"/>
+                                <field name="hours_worked"/>
+                                <field name="no_of_days"/>
+                                <field name="date"/>
+                            </group>
+                        <notebook>
+                            <page string="employee lines">
+                                <field name="loan_lines">
+                                    <tree editable="bottom">
+                                        <field name="date"/>
+                                        <field name="hours_worked"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_payroll_tree1" model="ir.ui.view">
+            <field name="name">employee overtime work</field>
+            <field name="model">employee.payroll</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="emp_id"/>
+                    <field name="date"/>
+                    <field name="no_of_days"/>
+                </tree>
+            </field>
+        </record>
+          
+    
+        <record id="action_payroll_create_new2" model="ir.actions.act_window">
+            <field name="name">overtime</field>
+            <field name="res_model">employee.payroll</field>
+            <field name="view_mode">form,tree</field>
+        </record>
+
+        <!-- <record id="structure_003" model="hr.payroll.structure">
+            <field name="name">Demo</field>
+            <field name="type_id" ref="hr_contract.structure_type_employee"/>
+            <field name="rule_ids" eval="[]"/>
+        </record> -->
+
+    </data>
+</odoo>

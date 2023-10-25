@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+        <record id="employee_slab_website_view_year_tree" model="ir.ui.view">
+            <field name="name">employee.year.tree</field>
+            <field name="model">employee.year</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="years" />
+                </tree>
+            </field>
+        </record>
+        <record id="employee_slab_website_view_year_form" model="ir.ui.view">
+            <field name="name">employee.year.form</field>
+            <field name="model">employee.year</field>
+            <field name="arch" type="xml">
+                <form string="year">
+                    <sheet>
+                        <group>
+                            <field name="years"/>
+                        </group>
+                    </sheet>
+                    <sheet>
+                         <notebook>
+                            <page string="year tax">
+                                <field name="year_connection_ids">
+                                <tree editable = "bottom">
+                                    <field name="income"/>
+                                    <field name="upto"/>
+                                    <field name="tax_slab"/>
+                                </tree>
+                                </field>
+                            </page>
+                    </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="employee_slab_website_action_view_year_form" model="ir.actions.act_window">
+            <field name="name">year</field>
+            <field name="res_model">employee.year</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+<!--        <menuitem id="employee_slab_website_menu_root" name="Employee slab" sequence="7"/>-->
+        <menuitem id="employee_slab_website_year_menu" name="year" parent="bi_employee_slab.employee_slab_website_menu_root" action="employee_slab_website_action_view_year_form" sequence="0"/>
+    </data>
+</odoo>

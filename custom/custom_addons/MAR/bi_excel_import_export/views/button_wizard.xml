@@ -1,0 +1,14 @@
+<odoo>
+<data>
+<record id="manufacturing_inherited_form1" model="ir.ui.view">
+    <field name="name">component.button.create</field>
+    <field name="model">mrp.bom</field>
+    <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+    <field name="arch" type="xml">
+        <xpath expr="/form/sheet/notebook/page/field[@name='bom_line_ids']" position="before">
+            <button name="bring_components" string="Bring Components" class="oe_highlight" type="object"/>
+        </xpath>
+    </field>
+</record>
+</data>
+</odoo>

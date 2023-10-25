@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+<data>
+<!-- form view -->
+<record id="company_salary_rule" model="ir.ui.view">
+    <field name="name">rule</field>
+    <field name="model">emp.salary.rules</field>
+    <field name="arch" type="xml">
+    <form string="rule form">
+    <sheet>
+    <group>
+        <group>
+            <field name="name"/>
+            <field name="perc"/>
+            <field name="categ_id"/>
+        </group>
+    </group>
+    </sheet>
+    </form>
+</field>
+</record>
+
+<!-- list view -->
+<record id="salary_rule_tree" model="ir.ui.view">
+    <field name="name">rule_form</field>
+    <field name="model">emp.salary.rules</field>
+    <field name="arch" type="xml">
+    <tree>
+        <field name="name"/>
+        <field name="perc"/>
+        <field name="categ_id"/>
+    </tree>
+    </field>
+</record>
+
+
+
+</data>
+</odoo>

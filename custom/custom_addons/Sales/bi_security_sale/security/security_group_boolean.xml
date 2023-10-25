@@ -1,0 +1,7 @@
+<odoo>
+    <data>
+<record id="overtime_message_access" model="res.groups">
+            <field name="name">Sale security</field>
+        </record>
+    </data>
+</odoo>

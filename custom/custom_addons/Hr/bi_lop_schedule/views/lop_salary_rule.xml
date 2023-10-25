@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="hr_new_rule_set_lop" model="hr.salary.rule">
+            <field name="name">LoP</field>
+            <field name="sequence" eval="102"/>
+            <field name="code">LOP</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = worked_days.LV80.amount</field>
+            <field name="struct_id" ref="hr_payroll.structure_002"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <menuitem id="crm_excel_report_menu"
+                    name="excel_report"
+                    parent="crm.crm_menu_root"
+                    sequence="6"/>
+
+            <menuitem id="excel_crm_sub_report_menu"
+                    name="excel_wizard"
+                    parent="bi_crm_excel.crm_excel_report_menu"
+                    action="crm_action_view_wizard_excel"
+                    sequence="3"/>
+    </data>
+
+</odoo>

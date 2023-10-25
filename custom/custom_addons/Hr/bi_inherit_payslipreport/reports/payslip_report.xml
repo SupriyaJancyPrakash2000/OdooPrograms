@@ -1,0 +1,130 @@
+<odoo>
+    <template id="report_employee_payslip" inherit_id="hr_payroll.report_payslip">
+        <xpath expr="//t[@t-call='web.external_layout']" position="replace">
+            <t t-foreach="docs" t-as="property">
+            <t t-call="web.html_container">
+            <t t-call="bi_inherit_payslipreport.payslip_custom_report123"/>
+            <div class="page">
+                        <h4 style="text-align: center"><u>BASSAM INFOTECH-SALARY SLIP</u></h4>
+
+                <div style="margin-bottom:45px;"></div>
+                        <table width="100%" style="font-size: 8px; border: 1px solid black; border-bottom:none;" cellpadding="2" cellspacing="0">
+                            <tr style="text-align:center;font-size: 15px; border: 1px solid black;">
+                                <td width="20%" style="text-align:left; border-right: 1px solid black">Emp code</td>
+                                <td width="40%" style="text-align:center; border-right: 1px solid black"><span t-field="property.employee_id.barcode"/></td>
+                                <td width="15%" style="text-align:left; border-right: 1px solid black">Month</td>
+                                <td width="25%" style="text-align:center; border-right: 1px solid black"><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%B')"/></td>
+                            </tr>
+                        </table>
+
+
+                        <table width="100%" style="font-size: 8px; border: 1px solid black; border-bottom:none;" cellpadding="2" cellspacing="0">
+                            <tr style="text-align:center;font-size: 15px; border: 1px solid black;">
+                                <td width="20%" style="text-align:left; border-right: 1px solid black">Emp Name</td>
+                                <td width="40%" style="text-align:center; border-right: 1px solid black"><span t-field="property.employee_id"/></td>
+                                <td width="15%" style="text-align:left; border-right: 1px solid black">Year</td>
+                                <td width="25%" style="text-align:center; border-right: 1px solid black"><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y')"/></td>
+                            </tr>
+                        </table>
+
+                        <table width="100%" style="font-size: 8px; border: 1px solid black; border-bottom:none;" cellpadding="2" cellspacing="0">
+                            <tr style="text-align:center;font-size: 15px; border: 1px solid black;">
+                                <td width="20%" style="text-align:left; border-right: 1px solid black">Designation</td>
+                                <td width="40%" style="text-align:center; border-right: 1px solid black"><span t-field="property.employee_id.job_id"/></td>
+                                <td width="15%" style="text-align:left; border-right: 1px solid black">Bank Name</td>
+                                <td width="25%" style="text-align:center; border-right: 1px solid black"><span t-field="property.employee_id.job_id"/></td>
+                            </tr>
+                        </table>
+
+                         <table width="100%" style="font-size: 8px; border: 1px solid black; border-bottom:none;" cellpadding="2" cellspacing="0">
+                            <tr style="text-align:center;font-size: 15px; border: 1px solid black;">
+                                <td width="20%" style="text-align:left; border-right: 1px solid black">DOJ</td>
+                                <td width="40%" style="text-align:center; border-right: 1px solid black"></td>
+                                <td width="15%" style="text-align:left; border-right: 1px solid black">Account Number</td>
+                                <td width="25%" style="text-align:center; border-right: 1px solid black"></td>
+                            </tr>
+                        </table>
+
+                         <table width="100%" style="font-size: 8px; border: 1px solid black; border-bottom:none;" cellpadding="2" cellspacing="0">
+                            <tr style="text-align:center;font-size: 15px; border: 1px solid black;">
+                                <td width="20%" style="text-align:left; border-right: 1px solid black">PAN Number</td>
+                                <td width="40%" style="text-align:center; border-right: 1px solid black"></td>
+                                <td width="15%" style="text-align:left; border-right: 1px solid black">Standard Days</td>
+                                <td width="25%" style="text-align:center; border-right: 1px solid black"></td>
+                            </tr>
+                        </table>
+
+                         <table width="100%" style="font-size: 8px; border: 1px solid black; border-bottom:none;" cellpadding="2" cellspacing="0">
+                            <tr style="text-align:center;font-size: 15px; border: 1px solid black;">
+                                <td width="20%" style="text-align:left; border-right: 1px solid black">ESI Number</td>
+                                <td width="40%" style="text-align:center; border-right: 1px solid black"></td>
+                                <td width="15%" style="text-align:left; border-right: 1px solid black">Payable Days</td>
+                                <td width="25%" style="text-align:center; border-right: 1px solid black"></td>
+                            </tr>
+                        </table>
+
+                         <table width="100%" style="font-size: 8px; border: 1px solid black; border-bottom:none;" cellpadding="2" cellspacing="0">
+                            <tr style="text-align:center;font-size: 15px; border: 1px solid black;">
+                                <td width="20%" style="text-align:left; border-right: 1px solid black">UAN Number</td>
+                                <td width="40%" style="text-align:center; border-right: 1px solid black"></td>
+                                <td width="15%" style="text-align:left; border-right: 1px solid black">LOP</td>
+                                <td width="25%" style="text-align:center; border-right: 1px solid black"></td>
+                            </tr>
+                        </table>
+
+
+                         <table width="100%" style="font-size: 8px; border: 1px solid black; background-color:8bc3ce;" cellpadding="2" cellspacing="0">
+                            <tr style="text-align:center;font-size: 15px; border: 1px solid black;">
+                                <td width="20%" style="text-align:left; border-right: 1px solid black">Earnings</td>
+                                <td width="12%" style="text-align:center; border-right: 1px solid black">Standard</td>
+                                <td width="12%" style="text-align:center; border-right: 1px solid black">Earned</td>
+                                <td width="16%" style="text-align:center; border-right: 1px solid black">Deductions</td>
+                                <td width="40%" style="text-align:left; border-right: 1px solid black">Amount</td>
+
+                            </tr>
+                        </table>
+                        <table width="100%" style="font-size: 8px; border: 1px solid black; " cellpadding="2" cellspacing="0">
+                            <t t-foreach="property.line_ids" t-as="b">
+                            <tr style="text-align:center;font-size: 15px; border: 1px solid black;">
+                                <td width="20%" style="text-align:left; border-right: 1px solid black; border-bottom: 1px solid black;"><span t-field="b.name"/></td>
+                                <td width="12%" style="text-align:center; border-right: 1px solid black; border-bottom: 1px solid black"></td>
+                                <td width="12%" style="text-align:center; border-right: 1px solid black; border-bottom: 1px solid black"></td>
+                                <td width="16%" style="text-align:center; border-right: 1px solid black; border-bottom: 1px solid black"></td>
+                                <td width="40%" style="text-align:left; border-right: 1px solid black; border-bottom: 1px solid black;"></td>
+                            </tr>
+                            </t>
+                        </table>
+
+                        <table width="100%" style="font-size: 8px; border: 1px solid black; " cellpadding="2" cellspacing="0">
+
+                            <tr style="text-align:center;font-size: 15px; border: 1px solid black; background-color:8bc3ce;">
+                                <td width="20%" style="text-align:left; border-right: 1px solid black; border-bottom: 1px solid black;">Gross Earnings</td>
+                                <td width="12%" style="text-align:center; border-right: 1px solid black; border-bottom: 1px solid black"></td>
+                                <td width="12%" style="text-align:center; border-right: 1px solid black; border-bottom: 1px solid black"></td>
+                                <td width="16%" style="text-align:center; border-right: 1px solid black; rowspan:1;">Gross Deduction</td>
+                                <td width="40%" style="text-align:left; border-right: 1px solid black; rowspan:1;"></td>
+                            </tr>
+                            <tr style="text-align:center;font-size: 15px; border: 1px solid black; background-color:8bc3ce; border-bottom: 1px solid black;">
+                                <td width="20%" style="text-align:left; border-right: 1px solid black;">CTC</td>
+                                <td width="12%" style="text-align:center; border-right: 1px solid black;"></td>
+                                <td width="12%" style="text-align:center; border-right: 1px solid black; "></td>
+                                <td width="16%" style="text-align:center; border-right: 1px solid black; "></td>
+                                <td width="40%" style="text-align:left; border-right: 1px solid black; "></td>
+                            </tr>
+                        </table>
+                     <table width="100%" style="font-size: 8px; border: 1px solid black; border-top:none;" cellpadding="2" cellspacing="0">
+                            <tr style="text-align:center;font-size: 15px; border: 1px solid black; background-color:8bc3ce;">
+                                <td width="20%" style="text-align:left; border-right: 1px solid black; border-bottom: 1px solid black;">Net Pay</td>
+                                <td width="80%" style="text-align:center; border-bottom: 1px solid black;"></td>
+
+                            </tr>
+                    </table>
+
+                            </div>
+
+            </t>
+            </t>
+
+        </xpath>
+    </template>
+</odoo>

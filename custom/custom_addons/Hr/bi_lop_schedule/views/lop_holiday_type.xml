@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <record id="holiday_status_lop1" model="hr.leave.type">
+            <field name="name">LoP</field>
+            <field name="requires_allocation">no</field>
+            <field name="leave_validation_type">both</field>
+            <field name="allocation_validation_type">officer</field>
+            <field name="request_unit">hour</field>
+            <field name="unpaid" eval="True"/>
+            <field name="leave_notif_subtype_id" ref="hr_holidays.mt_leave_unpaid"/>
+            <field name="responsible_id" ref="base.user_admin"/>
+            <field name="icon_id" ref="hr_holidays.icon_28"/>
+            <field name="color">5</field>
+            <field name="work_entry_type_id" ref="work_entry_type_unpaid_leave1"/>
+            <field name="company_id" eval="False"/>
+            <field name="sequence">7</field>
+        </record>
+    </data>
+</odoo>
+
+

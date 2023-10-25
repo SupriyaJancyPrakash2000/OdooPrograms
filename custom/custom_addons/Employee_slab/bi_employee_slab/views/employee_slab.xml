@@ -1,0 +1,51 @@
+<odoo>
+    <data>
+        <record id="employee_slab_website_view_tree" model="ir.ui.view">
+            <field name="name">hr.applicant.tree</field>
+            <field name="model">employee.slab</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_id" />
+                    <field name="tds_salary" />
+                    <field name="gross_salary"/>
+                    <field name="expence"/>
+                </tree>
+            </field>
+        </record>
+        <record id="employee_slab_website_view_form" model="ir.ui.view">
+            <field name="name">website.view.form</field>
+            <field name="model">employee.slab</field>
+            <field name="arch" type="xml">
+                <form string="Salary">
+                    <sheet>
+                        <group>
+                            <field name="employee_id" />
+                            <field name="tds_salary" />
+                            <field name="tds_month"/>
+                            <field name="gross_salary"/>
+                            <field name="income_month"/>
+                            <field name="expence"/>
+                            <field name="expence_monthly"/>
+                        </group>
+                    </sheet>
+                    <sheet>
+                        <group>
+                            <field name="year_wise"/>
+                            <field name="yearly_salary"/>
+                            <field name="tax"/>
+                        </group>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+        <record id="employee_slab_website_action_view_form" model="ir.actions.act_window">
+            <field name="name">salary</field>
+            <field name="res_model">employee.slab</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="employee_slab_website_menu_root" name="Employee slab" sequence="7"/>
+        <menuitem id="employee_slab_website_menu" name="Slab" parent="bi_employee_slab.employee_slab_website_menu_root" action="employee_slab_website_action_view_form" sequence="0"/>
+
+    </data>
+</odoo>

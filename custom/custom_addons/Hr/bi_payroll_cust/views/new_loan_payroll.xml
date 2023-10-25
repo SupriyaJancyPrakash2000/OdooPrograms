@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_payroll_form1" model="ir.ui.view">
+            <field name="name">payroll form</field>
+            <field name="model">loan.payroll</field>
+            <field name="arch" type="xml">
+                <form string="Loan">
+                 <header>
+                    <button name="loan_action" string="Approve" type="object" class="oe_highlight"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,approve"/>
+                </header>
+                    <sheet>
+                            <group>
+
+                                <field name="emp_id"/>
+                                <field name="date"/>
+                                <field name="no_of_instal"/>
+                                <field name="check"/>
+
+                            </group>
+                            <group>
+
+                                <field name="amount"/>
+                                
+                            </group>
+                        <notebook>
+                            <page string="loan lines">
+                                <field name="loan_lines">
+                                    <tree editable="bottom">
+                                        <field name="amount"/>
+                                        <field name="date"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_payroll_tree" model="ir.ui.view">
+            <field name="name">loan.payroll.new</field>
+            <field name="model">loan.payroll</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="emp_id"/>
+                    <field name="date"/>
+                    <field name="no_of_instal"/>
+                    <field name="check"/>
+                    <field name="amount"/>
+                </tree>
+            </field>
+        </record>
+          
+    
+        <record id="action_payroll_create_new1" model="ir.actions.act_window">
+            <field name="name">Loan allocated</field>
+            <field name="res_model">loan.payroll</field>
+            <field name="view_mode">form,tree</field>
+        </record>
+
+        <record id="structure_003" model="hr.payroll.structure">
+            <field name="name">Demo</field>
+            <field name="type_id" ref="hr_contract.structure_type_employee"/>
+            <field name="rule_ids" eval="[]"/>
+        </record>
+
+    </data>
+</odoo>

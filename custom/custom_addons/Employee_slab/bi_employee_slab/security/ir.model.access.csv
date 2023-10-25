@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_employee_slab,bi_employee_slab.employee.slab,model_employee_slab,base.group_user,1,1,1,1
+access_employee_year,bi_employee_slab.employee.year,model_employee_year,base.group_user,1,1,1,1
+access_employee_year_lines,bi_employee_slab.employee.year.lines,model_employee_year_lines,base.group_user,1,1,1,1
+access_employee_slab_lines,bi_employee_slab.employee.slab.lines,model_employee_slab_lines,base.group_user,1,1,1,1
+
+

@@ -1,0 +1,12 @@
+<odoo>    
+    <data>
+        <menuitem
+            id="employee_overtime_payroll_main_menu"
+            name="Overtime"
+            action="action_payroll_create_new2"
+            parent="hr_payroll.menu_hr_payroll_employees_root"
+            sequence="9"
+        />
+        
+    </data>
+</odoo>

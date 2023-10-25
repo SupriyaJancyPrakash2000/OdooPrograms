@@ -1,0 +1,9 @@
+<odoo>
+    <template id="payslip_custom_report123">
+        <div class="header">
+            <div style="margin:20px;padding:0px; float:right;">
+                <img src="/bi_inherit_payslipreport/static/description/bassam-i.png" style="width:50%"/>
+            </div>
+        </div>
+    </template>
+</odoo>

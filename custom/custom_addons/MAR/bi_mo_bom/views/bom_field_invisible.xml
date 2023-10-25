@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+        <record id="mo_bom_form_hide_field" model="ir.ui.view">
+            <field name="name">bill of material</field>
+            <field name="model">mrp.bom</field>
+            <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_id']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                </xpath>
+                 <xpath expr="//field[@name='code']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                </xpath>
+                 <xpath expr="//field[@name='type']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                </xpath>
+                 <xpath expr="//field[@name='product_qty']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                </xpath>
+                 <xpath expr="//field[@name='product_uom_id']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                </xpath>
+                 <xpath expr="//label[@for='product_qty']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='by_products']" position="attributes">
+                        <attribute name="groups">base.group_no_one</attribute>
+                </xpath>
+                <xpath expr="//page[@name='miscellaneous']" position="attributes">
+                    <attribute name="groups">base.group_no_one</attribute>
+               </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

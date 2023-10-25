@@ -1,0 +1,70 @@
+<odoo>
+<data>
+
+
+<!-- form view -->
+<record id="product_info_form" model="ir.ui.view">
+    <field name="name">product.form</field>
+    <field name="model">product.info</field>
+    <field name="arch" type="xml">
+    <form string="Product Form">
+
+    <sheet>
+    <div class="oe_button_box" name="button_box">
+                <button class="oe_stat_button" name="product_show" string="Website" type="object" icon="fa-globe" >
+
+                </button>
+    </div>
+
+
+        <group>
+            <field name="service_name"/>
+            <field name="type"/>
+            <field name="is_published"/>
+
+        </group>
+
+
+
+
+    </sheet>
+    </form>
+</field>
+</record>
+
+
+<!-- list view -->
+<record id="product_info_tree" model="ir.ui.view">
+    <field name="name">product.form.inherit.new2</field>
+    <field name="model">product.info</field>
+    <field name="arch" type="xml">
+    <tree>
+            <field name="service_name"/>
+            <field name="type"/>
+    </tree>
+    </field>
+</record>
+
+
+<record id="product_action" model="ir.actions.act_window">
+            <field name="name">Product</field>
+            <field name="res_model">product.info</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+<menuitem id="product_details_menu"
+            name="Product Info"
+            action="product_action"
+            sequence="6"/>
+
+    <menuitem id="sub_menu_id"
+        name="Product details"
+        parent="product_details_menu"
+        action="product_action"
+        />
+
+
+</data>
+
+</odoo>

@@ -1,0 +1,9 @@
+<odoo>
+    <data noupdate="0">
+        <record id="input_allowance_arrears_set1" model="hr.payslip.input.type">
+            <field name="name">Arrears</field>
+            <field name="code">ARS</field>
+            <field name="country_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

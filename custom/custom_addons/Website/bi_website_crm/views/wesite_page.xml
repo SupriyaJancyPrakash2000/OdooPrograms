@@ -1,0 +1,74 @@
+<odoo>
+    <template id="new_page">
+         <t t-call="website.layout">
+             <div id="wrap" class="oe_structure">
+                <div class="container" id="events_website">
+                    <t t-foreach="events" t-as="o">
+                        <br><br>
+                        <a href="/service/Enquiry">
+                            <i class="fa fa-user fa-5x"/>
+                        </a>
+                        <t t-esc="o.service_name"/>,
+                        </br></br>
+                         <t t-esc="o.type"/>
+                    </t>
+                </div>
+
+             </div>
+         </t>
+    </template>
+
+    <template id="new_form_template">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure">
+                <div class="container" id="events_website">
+                    <br/>
+                     <h2 style="text-align: center"><u>Enquiry Form</u></h2>
+                    <br/>
+                    <form action="/enquiry-form/submit" method="post">
+                       <br/>
+                        <br/>
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control s_website_form_input" name="name" id="name"
+                               required="True"/>
+                        <br/>
+                         <br/>
+                        <label for="company">Company:</label>
+                        <input type="textarea" class="form-control" name="company" id="company"/>
+                        <br/>
+                        <label for="address">Address:</label>
+                        <input type="textarea" class="form-control" name="address" id="address"/>
+                        <br/>
+                         <br/>
+                        <label for="phone">Phone:</label>
+                        <input type="textarea" class="form-control" name="phone" id="phone"/>
+                        <br/>
+                         <br/>
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" name="email"/>
+                        <br/>
+                        <button type="contacts" class="btn btn-primary">Submit</button>
+                        <br/>
+
+                    </form>
+                </div>
+            </div>
+        </t>
+    </template>
+
+     <template id="contacts" name="Contact">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure">
+                <div class="container">
+                    <div class="col-md-12">
+                        <br/>
+                        <br/>
+                        <div class="alert alert-success">
+                            Enquiry created Successfully......
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,216 @@
+<odoo>
+    <template id="report_employee_payslip" inherit_id="hr_payroll.report_payslip">
+        <xpath expr="//t[@t-call='web.external_layout']" position="replace">
+            <t t-foreach="docs" t-as="property">
+            <t t-call="web.html_container">
+            <t t-call="bi_inherit_payslipreport.payslip_custom_report123"/>
+            <div class="page">
+
+                        <h2 style="text-align:center;" ><u>BASSAM SALARY SLIP</u></h2>
+                     </div>
+                    <div class="grid-container">
+                        <table width="100%" style="border:1px solid black; border-collapse: collapse;">
+                            <tr>
+                                <td width="20%" style="border-right:1px solid black;">Emp code</td>
+                                <td width="40%" style="border-right:1px solid black; text-align:center;"><span t-field="property.employee_id.id"/></td>
+                                <td width="20%" style="border-right:1px solid black;">Month</td>
+                                 <td width="20%" style="border-right:1px solid black; border-right:none;"><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%B')"/></td>
+                            </tr>
+                        </table>
+                        <table width="100%" style="border:1px solid black; border-collapse: collapse;">
+                            <tr>
+                                <td width="20%" style="border-right:1px solid black;">Emp Name</td>
+                                <td width="40%" style="border-right:1px solid black;  text-align:center;"><span t-field="property.employee_id.name"/></td>
+                                <td width="20%" style="border-right:1px solid black;">Year</td>
+                                <td width="20%" style="border-right:1px solid black; border-right:none;">2023</td>
+                            </tr>
+                        </table>
+                        <table width="100%" style="border:1px solid black; border-collapse: collapse;">
+                            <tr>
+                                <td width="20%" style="border-right:1px solid black;">Designation</td>
+                                <td width="40%" style="border-right:1px solid black;  text-align:center;"><span t-field="property.employee_id.job_id"/></td>
+                                <td width="20%" style="border-right:1px solid black;">Bank Name</td>
+                                 <td width="20%" style="border-right:1px solid black; border-right:none;"><span t-field="property.employee_id.bank_account_id.bank_id"/></td>
+                            </tr>
+                        </table>
+                        <table width="100%" style="border:1px solid black; border-collapse: collapse;">
+                            <tr>
+                                <td width="20%" style="border-right:1px solid black;">DOJ</td>
+                                <td width="40%" style="border-right:1px solid black; text-align:center;"><span t-field="property.employee_id.first_contract_date"/></td>
+                                <td width="20%" style="border-right:1px solid black;">Account Number</td>
+                                 <td width="20%" style="border-right:1px solid black; border-right:none;"><span t-field="property.employee_id.bank_account_id"/></td>
+                            </tr>
+                        </table>
+                        <table width="100%" style="border:1px solid black; border-collapse: collapse;">
+                            <tr>
+                                <td width="20%" style="border-right:1px solid black;">PAN Number</td>
+                                <td width="40%" style="border-right:1px solid black; text-align:center;"><span t-field="property.employee_id.pan"/></td>
+                                <td width="20%" style="border-right:1px solid black;">Standard Days</td>
+                                <td width="20%" style="border-right:1px solid black; border-right:none;">30.0</td>
+                            </tr>
+                        </table>
+                        <table width="100%" style="border:1px solid black; border-collapse: collapse;">
+                            <tr>
+                                <td width="20%" style="border-right:1px solid black;">ESI Number</td>
+                                <td width="40%" style="border-right:1px solid black; text-align:center;"><span t-field="property.employee_id.esi"/></td>
+                                <td width="20%" style="border-right:1px solid black;">Payable Days </td>
+                                 <td width="20%" style="border-right:1px solid black; border-right:none;">0.0</td>
+                            </tr>
+                        </table>
+                         <table width="100%" style="border:1px solid black; border-collapse: collapse;">
+                            <tr>
+                                <td width="20%" style="border-right:1px solid black;">UAN Number</td>
+                                <td width="40%" style="border-right:1px solid black; text-align:center;"><span t-field="property.employee_id.uan"/> </td>
+                                <td width="20%" style="border-right:1px solid black;">LOP </td>
+                                 <td width="20%" style="border-right:1px solid black; border-right:none;">0.0</td>
+                            </tr>
+                        </table>
+                         <table width="100%" style="border:1px solid black; border-collapse: collapse; background-color: #ccccff">
+                            <tr>
+                                <td width="20%" style="border-right:1px solid black;"><b>Earnings</b></td>
+                                <td width="10%" style="border-right:1px solid black; text-align:center;"><b>Standard</b></td>
+                                <td width="10%" style="border-right:1px solid black; text-align:center;"><b>Earned </b></td>
+                                <td width="20%" style="border-right:1px solid black;"><b>Deductions</b></td>
+                                <td width="40%" style="border-right:1px solid black; border-right:none; text-align:center;"><b>Amount</b></td>
+                            </tr>
+                        </table>
+                         <table width="100%" style="border:1px solid black; border-collapse: collapse;">
+                            <tr>
+                                <t t-foreach="property.line_ids[0]" t-as="p">
+                                    <td width="20%" style="border-right:1px solid black;">Basic</td>
+                                    <td width="10%" style="border-right:1px solid black; text-align:right;"><span t-esc="int(p.amount)"/></td>
+                                    <td width="10%" style="border-right:1px solid black; text-align:right;"><span t-esc="int(p.amount)"/></td>
+                                </t>
+                                <t t-foreach="property.line_ids[8]" t-as="p">
+                                    <td width="20%" style="border-right:1px solid black;">Employee PF</td>
+                                    <td width="40%" style="border-right:1px solid black; border-right:none; text-align:center;"><span t-esc="int(p.amount)"/></td>
+                                </t>
+                            </tr>
+                        </table>
+                        <table width="100%" style="border:1px solid black; border-collapse: collapse;">
+                            <tr>
+                                <t t-foreach="property.line_ids[3]" t-as="p">
+                                    <td width="20%" style="border-right:1px solid black;">House Rental Allowance</td>
+                                    <td width="10%" style="border-right:1px solid black; text-align:right;"><span t-esc="int(p.amount)"/></td>
+                                    <td width="10%" style="border-right:1px solid black; text-align:right;"><span t-esc="int(p.amount)"/></td>
+                                </t>
+                                <t t-foreach="property.line_ids[5]" t-as="p">
+                                    <td width="20%" style="border-right:1px solid black;">Employee ESI</td>
+                                    <td width="40%" style="border-right:1px solid black; border-right:none; text-align:center;"><span t-esc="int(p.amount)"/></td>
+                                </t>
+                            </tr>
+                        </table>
+                        <table width="100%" style="border:1px solid black; border-collapse: collapse;">
+                            <tr>
+                                <t t-foreach="property.line_ids[1]" t-as="p">
+                                    <td width="20%" style="border-right:1px solid black;">Conveyance Allowance</td>
+                                    <td width="10%" style="border-right:1px solid black; text-align:right;"><span t-esc="int(p.amount)"/></td>
+                                    <td width="10%" style="border-right:1px solid black; text-align:right;"><span t-esc="int(p.amount)"/></td>
+
+                                </t>
+                                <t t-foreach="property.line_ids[10]" t-as="p">
+                                    <td width="20%" style="border-right:1px solid black;">professional Tax</td>
+                                    <td width="40%" style="border-right:1px solid black; border-right:none; text-align:center;"><span t-esc="int(p.amount)"/></td>
+                                </t>
+                            </tr>
+                        </table>
+                        <table width="100%" style="border:1px solid black; border-collapse: collapse;">
+                            <tr>
+                                <t t-foreach="property.line_ids[2]" t-as="p">
+                                    <td width="20%" style="border-right:1px solid black;">Medical Allowance</td>
+                                    <td width="10%" style="border-right:1px solid black; text-align:right;"><span t-esc="int(p.amount)"/></td>
+                                    <td width="10%" style="border-right:1px solid black; text-align:right;"><span t-esc="int(p.amount)"/></td>
+                                </t>
+                                <t t-foreach="property.line_ids[11]" t-as="p">
+                                    <td width="20%" style="border-right:1px solid black;">Labour Welfare Fund</td>
+                                    <td width="40%" style="border-right:1px solid black; border-right:none; text-align:center;"><span t-esc="int(p.amount)"/></td>
+                                </t>
+                            </tr>
+                        </table>
+                         <table width="100%" style="border:1px solid black; border-collapse: collapse;">
+                            <tr>
+                                <t t-foreach="property.line_ids[6]" t-as="p">
+                                    <td width="20%" style="border-right:1px solid black;">Special Allowance</td>
+                                    <td width="10%" style="border-right:1px solid black; text-align:right;"><span t-esc="int(p.amount)"/></td>
+                                    <td width="10%" style="border-right:1px solid black; text-align:right;"><span t-esc="int(p.amount)"/></td>
+                                </t>
+                                <t t-foreach="property.line_ids[12]" t-as="p">
+                                    <td width="20%" style="border-right:1px solid black;">TDS</td>
+                                <td width="40%" style="border-right:1px solid black; border-right:none; text-align:center;"><span t-esc="int(p.amount)"/></td>
+                                </t>
+                            </tr>
+                        </table>
+                         <table width="100%" style="border:1px solid black; border-collapse: collapse;">
+                            <tr>
+                                <td width="20%" style="border-right:1px solid black;">Arrear</td>
+                                <td width="10%" style="border-right:1px solid black; text-align:right;">0</td>
+                                <td width="10%" style="border-right:1px solid black; text-align:right;">0</td>
+                                <td width="20%" style="border-right:1px solid black;">others</td>
+                                <td width="40%" style="border-right:1px solid black; border-right:none; text-align:center;">0</td>
+                            </tr>
+                        </table>
+                         <table width="100%" style="border:1px solid black; border-collapse: collapse;">
+                            <tr>
+                                <t t-foreach="property.line_ids[8]" t-as="p">
+                                    <td width="20%" style="border-right:1px solid black;">Employer PF</td>
+                                    <td width="10%" style="border-right:1px solid black; text-align:right;"><span t-esc="int(p.amount)"/></td>
+                                    <td width="10%" style="border-right:1px solid black; text-align:right;"><span t-esc="int(p.amount)"/></td>
+                                </t>
+                                <td width="20%" style="border-right:1px solid black;"> </td>
+                                <td width="40%" style="border-right:1px solid black; border-right:none;"> </td>
+                            </tr>
+                        </table>
+                         <table width="100%" style="border:1px solid black; border-collapse: collapse;">
+                            <tr>
+                                <t t-foreach="property.line_ids[5]" t-as="p">
+                                    <td width="20%" style="border-right:1px solid black;">Employer ESI</td>
+                                    <td width="10%" style="border-right:1px solid black; text-align:right;"><span t-esc="int(p.amount)"/></td>
+                                    <td width="10%" style="border-right:1px solid black; text-align:right;"><span t-esc="int(p.amount)"/></td>
+                                </t>
+                                <td width="20%" style="border-right:1px solid black;"> </td>
+                                <td width="40%" style="border-right:1px solid black; border-right:none;"> </td>
+                            </tr>
+                        </table>
+                        <table width="100%" style="border:1px solid black; border:none; border-collapse: collapse;  background-color: #ccccff">
+                            <tr>
+                                <t t-foreach="property.line_ids[9]" t-as="p">
+                                    <td width="20%" style="border-right:1px solid black; border-left:1px solid black; border-bottom:1px solid black;"><b>Gross Earning</b></td>
+                                    <td width="10%" style="border-right:1px solid black; border-bottom:1px solid black; text-align:right;"><b><span t-esc="int(p.amount)"/></b></td>
+                                    <td width="10%" style="border-right:1px solid black; border-bottom:1px solid black; text-align:right;"><b><span t-esc="int(p.amount)"/></b></td>
+                                </t>
+                                <t t-foreach="property.line_ids[7]" t-as="p">
+                                    <td width="20%" style="border-right:1px solid black; border-bottom:none; text-align:center;"><b>Gross Deduction</b></td>
+                                    <td width="40%" style="border-right:1px solid black; border-bottom:none; border-right:1px solid black; text-align:center;"><b><span t-esc="int(p.amount)"/></b></td>
+                                </t>
+                            </tr>
+                             <tr>
+                                <t t-foreach="property.line_ids[4]" t-as="p">
+                                    <td width="20%" style="border-right:1px solid black; border-left:1px solid black;"><b>CTC</b></td>
+                                    <td width="10%" style="border-right:1px solid black; text-align:right;"><b><span t-esc="int(p.amount)"/></b></td>
+                                    <td width="10%" style="border-right:1px solid black; text-align:right;"><b><span t-esc="int(p.amount)"/></b></td>
+                                </t>
+                                <td width="20%" style="border-right:1px solid black; border-top:none;"> </td>
+                                <td width="40%" style="border-right:1px solid black; border-top:none; border-right:1px solid black;"> </td>
+                            </tr>
+                        </table>
+
+                        <table width="100%" style="border:1px solid black; border-collapse: collapse; background-color: #ccccff">
+                            <tr>
+                                <t t-foreach="property.line_ids[12]" t-as="p">
+                                    <td width="20%" style="border-right:1px solid black;"><b>NET PAY</b></td>
+                                    <td width="80%" style="border-right:1px solid black; border-right:none; padding-left:15px;"><b><span t-esc="int(p.amount)"/>(<span t-esc="p.currency_id.with_context(lang='US').amount_to_text(p.amount)"/>)</b></td>
+                                </t>
+                            </tr>
+                        </table>
+                        <div class="page">
+                            <h6 style="text-align:center;" >******** This is computer generated document, hence signature is not required ********</h6>
+                     </div>
+                    </div>
+
+
+            </t>
+            </t>
+
+        </xpath>
+    </template>
+</odoo>

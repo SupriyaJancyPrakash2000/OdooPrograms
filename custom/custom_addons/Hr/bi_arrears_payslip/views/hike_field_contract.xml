@@ -1,0 +1,12 @@
+<odoo>
+    <record model="ir.ui.view" id="view_employee_contract_arrears_inherited">
+        <field name="name">employee hike</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='wage_type']" position="after">
+                <field name="arrears_boolean"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

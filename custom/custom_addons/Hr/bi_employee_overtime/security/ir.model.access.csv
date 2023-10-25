@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_employee_payroll_user,bi_employee_overtime.employee.payroll,model_employee_payroll,base.group_user,1,1,1,1
+access_employee_payrolllines_user,bi_employee_overtime.employee.payrolllines,model_employee_payrolllines,base.group_user,1,1,1,1

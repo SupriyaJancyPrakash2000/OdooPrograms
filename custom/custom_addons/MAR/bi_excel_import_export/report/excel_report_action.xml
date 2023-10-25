@@ -1,0 +1,10 @@
+<odoo>
+    <record id="mrp_report_excel_xlsx_id" model="ir.actions.report">
+        <field name="name">mrp Excel Report</field>
+        <field name="model">excel.wizard</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">bi_excel_import_export.mrp_xlsx</field>
+        <field name="report_file">bi_excel_import_export.mrp_xlsx</field>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

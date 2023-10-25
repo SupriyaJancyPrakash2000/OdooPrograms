@@ -1,0 +1,12 @@
+<odoo>    
+    <data>
+        <menuitem
+            id="loan_payroll_main_menu"
+            name="Loan"
+            action="action_payroll_create_new1"
+            parent="hr_payroll.menu_hr_payroll_employees_root"
+            sequence="7"
+        />
+        
+    </data>
+</odoo>

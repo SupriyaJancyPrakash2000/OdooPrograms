@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <templates xml:space="preserve">
+    <t t-name="replace_chatter_portal" t-inherit="portal.Composer" t-inherit-mode="extension"   owl="1">
+        <xpath expr="//div[@class='o_portal_chatter_composer']" position="attributes">
+            <attribute name="class">d-none</attribute>
+        </xpath>
+    </t>
+</templates>

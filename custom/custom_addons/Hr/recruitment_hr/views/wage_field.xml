@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="wage_field_in_hr_recruitment" model="ir.ui.view">
+            <field name="name">Wage Field</field>
+            <field name="model">hr.applicant</field>
+            <field name="inherit_id" ref="hr_recruitment.hr_applicant_view_form"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='availability']" position="before">
+                    <field name="wage"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

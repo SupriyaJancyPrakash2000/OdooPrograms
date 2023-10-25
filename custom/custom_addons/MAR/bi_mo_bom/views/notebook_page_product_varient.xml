@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <record id="mo_bom_form_123" model="ir.ui.view">
+            <field name="name">bill of material</field>
+            <field name="model">mrp.bom</field>
+            <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="before">
+                    <header>
+                        <button string="Create MO" type="object" class="oe_highlight" name="create_mo"/>
+                    </header>
+                </xpath>
+                <xpath expr="//button[@name='419']" position="before">
+                    <button class="oe_stat_button" name="mo_view"  type="object" icon="fa-id-card-o" >
+                    <field string="MO Count"  name="mo_count" widget="statinfo"/>
+                </button>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                        <page name="product_variant" string="Product Variants">
+                            <field name="bill_mat_line_ids">
+                            <tree editable="bottom">
+                                <field name="product_variants"/>
+                                <field name="quant"/>
+                                <field name="ratio"/>
+                                <field name="uomid"/>
+                            </tree>
+                            </field>
+                        </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

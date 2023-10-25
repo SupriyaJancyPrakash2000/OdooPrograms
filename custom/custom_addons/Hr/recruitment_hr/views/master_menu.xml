@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <record id="rule_action" model="ir.actions.act_window">
+            <field name="name">rule</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">emp.salary.rules</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    <menuitem id="menu_rule_id"
+        name="Rules"
+        parent="hr_recruitment.menu_hr_recruitment_root"
+        action="rule_action"/>
+
+        <menuitem id="sub_menu_rule_id"
+        name="company rules"
+        parent="menu_rule_id"
+        action="rule_action"
+        />
+
+    </data>
+</odoo>

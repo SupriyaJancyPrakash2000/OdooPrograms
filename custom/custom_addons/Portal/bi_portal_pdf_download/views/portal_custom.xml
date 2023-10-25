@@ -1,0 +1,31 @@
+<odoo>
+    <template id="portal_my_task" inherit_id="project.portal_my_task" name="Portal: My Task with Timesheets">
+        <xpath expr="//li[@id='task-nav']" position="before">
+            <li t-if="not timesheets" class="list-group-item d-grid flex-grow-1" id='nav-report'>
+                <div class="o_download_pdf d-flex gap-1">
+                    <button>
+                    <a class="btn btn-secondary flex-fill o_download_btn" t-att-href="task.sudo().get_portal_url_let(report_type='pdf', download=True)" title="PDF-Download" context="{'task_id': task.id}"><i class="fa fa-print"/>PDF-Download</a>
+<!--                        <a class="btn btn-secondary flex-fill o_download_btn" t-attf-href="/my_portal/" title="Download"><i class="fa fa-print"/>PDF-Download</a>-->
+                    </button>
+                </div>
+            </li>
+        </xpath>
+    </template>
+
+
+<!--    <template id="sale_order_portal_id" name="sale_order_portal" inherit_id="sale.sale_order_portal_template">-->
+<!--   <xpath expr="//div[hasclass('o_download_pdf')]" position="inside">-->
+<!--       <li class="list-group-item flex-grow-1">-->
+<!--           <div class="o_download_pdf btn-toolbar flex-sm-nowrap">-->
+<!--               <div class="btn-group flex-grow-1 mr-1 mb-1">-->
+<!--               <a class="btn btn-secondary btn-block o_download_btn"  t-att-href="sale_order.get_portal_url(report_type='pdf', download=True)" title="Download"><i class="fa fa-download"/> Download</a>-->
+<!--               </div>-->
+<!--           </div>-->
+<!--       </li>-->
+<!--   </xpath>-->
+<!--</template>-->
+
+
+
+
+</odoo>

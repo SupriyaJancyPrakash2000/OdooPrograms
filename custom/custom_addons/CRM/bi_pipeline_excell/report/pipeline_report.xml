@@ -1,0 +1,10 @@
+<odoo>
+    <record id="action_openacademy_crmpipelinexlsx_report" model="ir.actions.report">
+        <field name="name">Pipeline Excel Report</field>
+        <field name="model">pipeline.wizard</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">bi_pipeline_excell.openacademy_inventoryxlsx_report</field>
+        <field name="report_file">bi_pipeline_excell.openacademy_inventoryxlsx_report</field>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

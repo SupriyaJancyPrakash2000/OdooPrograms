@@ -1,0 +1,40 @@
+<odoo>
+<data>
+    <record id="custom_crm_report_wizard_view" model="ir.ui.view">
+        <field name="name">custom.crm.report.wizard.view</field>
+        <field name="model">custom.crm.report</field>
+        <field name="arch" type="xml">
+            <form string="Wizard Form">
+
+                <group>
+                    <field name="date_from" />
+                    <field name="date_to" />
+                    <field name="sales_person"/>
+                    <!-- <field name="sales_person_id"/> -->
+                </group>
+
+                 <footer>
+                    <button string="Generate Excel" name="generate_report" type="object" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="crm_action_view_wizard_excel" model="ir.actions.act_window">
+        <field name="name">view.wizard.newexcel</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">custom.crm.report</field>
+        <field name="view_mode">form,tree</field>
+        <field name="view_id" ref="custom_crm_report_wizard_view"/>
+        <field name="target">new</field>
+    </record>
+
+</data>
+</odoo>
+
+
+
+
+
+
